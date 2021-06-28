@@ -1,0 +1,14 @@
+<ul *ngIf="postsList.length > 0">
+    <li *ngFor="let post of postsList">
+        <div class="card">
+            <div class="card-content">
+                <p class="id"><small>ID: {{ post.id }}</small></p>
+                <p>{{ post.text }}</p>
+                <a class="button is-danger is-small" (click)="removePost(post.id)">Eliminar</a>
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="notification is-danger" *ngIf="postsList && postsList.length === 0">
+    Sin Posts :(
+</div>
